@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1573097271 source:/home/corey/Documents/atmega_projects/LCD_Ticker/fuse.c
+	<avr/io.h>
+
+1574047551 source:/home/corey/Documents/atmega_projects/LCD_Ticker/main.c
+	"uart.h"
+	"lcd.h"
+	<avr/io.h>
+	<util/delay.h>
+
+1574043164 /home/corey/Documents/atmega_projects/LCD_Ticker/uart.h
+
+1574043463 /home/corey/Documents/atmega_projects/LCD_Ticker/lcd.h
+
+1574043132 source:/home/corey/Documents/atmega_projects/LCD_Ticker/uart.c
+	<avr/io.h>
+	<util/delay.h>
+
+1574053204 source:/home/corey/Documents/atmega_projects/LCD_Ticker/lcd.c
+	<avr/io.h>
+	<util/delay.h>
+
