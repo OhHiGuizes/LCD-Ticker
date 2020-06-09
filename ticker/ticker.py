@@ -6,13 +6,12 @@ def main():
 		s.read_until(b'Ready!')
 		b = f.read(1)
 		s.write(bytes(b, encoding='utf8'))
-		while True:
-			if(s.read_until(b'OK!')):
-				c = f.read(1)
-				if(not c):
-					break
-				else:
-					s.write(bytes(c, encoding='utf8'))
+		while s.read_until(b'OK!') & !f.closed:
+			c = f.read(1)
+			if(not c):
+				break
+			else:
+				s.write(bytes(c, encoding='utf8'))
 
 	
 if __name__ == "__main__":
