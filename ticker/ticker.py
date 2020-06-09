@@ -6,7 +6,7 @@ def main():
 		s.read_until(b'Ready!')
 		b = f.read(1)
 		s.write(bytes(b, encoding='utf8'))
-		while s.read_until(b'OK!') & !f.closed:
+		while (s.read_until(b'OK!') and not f.closed):
 			c = f.read(1)
 			if(not c):
 				break
