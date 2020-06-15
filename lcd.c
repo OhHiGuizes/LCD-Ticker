@@ -1,14 +1,14 @@
 #define LCD_Dir  DDRB		/* Define LCD data port direction */
 #define LCD_Port PORTB		/* Define LCD data port */
-#define RS PB0				/* Define Register Select pin */
-#define EN PB1 				/* Define Enable signal pin */
+#define RS PB4				/* Define Register Select pin */
+#define EN PB5 				/* Define Enable signal pin */
 
 #include <avr/io.h>
 #include <util/delay.h>
 
 void LCD_Command( unsigned char cmnd )
 {
-	LCD_Port = ((LCD_Port & 0x0F) | (cmnd & 0xF0)) >> 2; /* sending upper nibble */
+	LCD_Port = ((LCD_Port & 0xF0) | (cmnd & 0xF0)); /* sending upper nibble */
 	LCD_Port &= ~ (1<<RS);		/* RS=0, command reg. */
 	LCD_Port |= (1<<EN);		/* Enable pulse */
 	_delay_us(1);
@@ -16,7 +16,7 @@ void LCD_Command( unsigned char cmnd )
 
 	_delay_us(200);
 
-	LCD_Port = ((LCD_Port & 0x0F) | (cmnd << 4)) >> 2;  /* sending lower nibble */
+	LCD_Port = ((LCD_Port & 0xF0) | (cmnd << 4));  /* sending lower nibble */
 	LCD_Port &= ~ (1<<RS);		/* RS=0, command reg. */
 	LCD_Port |= (1<<EN);
 	_delay_us(1);
@@ -28,7 +28,7 @@ void LCD_Command( unsigned char cmnd )
 
 void LCD_Char( unsigned char data )
 {
-	LCD_Port = ((LCD_Port & 0x0F) | (data & 0xF0)) >> 2; /* sending upper nibble */
+	LCD_Port = ((LCD_Port & 0xF0) | (data & 0xF0)); /* sending upper nibble */
 	LCD_Port |= (1<<RS);		/* RS=1, data reg. */
 	LCD_Port|= (1<<EN);
 	_delay_us(1);
@@ -36,7 +36,7 @@ void LCD_Char( unsigned char data )
 
 	_delay_us(200);
 
-	LCD_Port = ((LCD_Port & 0x0F) | (data << 4)) >> 2; /* sending lower nibble */
+	LCD_Port = ((LCD_Port & 0xF0) | (data << 4)); /* sending lower nibble */
 	LCD_Port |= (1<<RS);		/* RS=1, data reg. */
 	LCD_Port |= (1<<EN);
 	_delay_us(1);
