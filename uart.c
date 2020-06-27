@@ -6,10 +6,10 @@
 #define BAUD_PRESCALLER (((F_CPU / (BAUDRATE * 16UL))) - 1)
 
 //Declaration of our functions
-void USART_init(void);
-unsigned char USART_receive(void);
-void USART_send( unsigned char data);
-void USART_putstring(char* StringPtr);
+//void USART_init(void);
+//unsigned char USART_receive(void);
+//void USART_send( unsigned char data);
+//void USART_putstring(char* StringPtr);
 
 void USART_init(void){
 

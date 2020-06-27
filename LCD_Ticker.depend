@@ -20,3 +20,25 @@
 	<avr/io.h>
 	<util/delay.h>
 
+1593128460 source:/home/corey/git-folder/LCD-Ticker/fuse.c
+	<avr/io.h>
+
+1593222177 source:/home/corey/git-folder/LCD-Ticker/lcd.c
+	<avr/io.h>
+	<util/delay.h>
+
+1593135863 source:/home/corey/git-folder/LCD-Ticker/main.c
+	"uart.h"
+	"lcd.h"
+	<avr/io.h>
+	<util/delay.h>
+	<avr/interrupt.h>
+
+1593128460 /home/corey/git-folder/LCD-Ticker/uart.h
+
+1593222317 /home/corey/git-folder/LCD-Ticker/lcd.h
+
+1593216374 source:/home/corey/git-folder/LCD-Ticker/uart.c
+	<avr/io.h>
+	<util/delay.h>
+
